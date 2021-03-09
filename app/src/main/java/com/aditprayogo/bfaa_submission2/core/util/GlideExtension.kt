@@ -9,7 +9,6 @@ import com.bumptech.glide.request.transition.DrawableCrossFadeFactory
 fun ImageView.load(imgResource : Any?) {
     Glide.with(context.applicationContext)
         .load(imgResource)
-        .circleCrop()
         .transition(DrawableTransitionOptions.withCrossFade(getDrawableFactory()))
         .placeholder(R.drawable.ic_user)
         .into(this)

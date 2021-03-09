@@ -1,10 +1,12 @@
 package com.aditprayogo.bfaa_submission2.ui.main
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
+import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.RecyclerView
 import com.aditprayogo.bfaa_submission2.R
 import com.aditprayogo.bfaa_submission2.core.util.load
@@ -22,11 +24,11 @@ class MainAdapter(
         private val binding: ItemRowUserBinding = ItemRowUserBinding.bind(itemView)
 
         fun bind(data: SearchResponseItem) {
-            binding.apply {
-                imgUser.load(data.avatarUrl)
-                txtUsername.text = data.login
-            }
             with(itemView) {
+                binding.apply {
+                    imgUser.load(data.avatarUrl)
+                    txtUsername.text = data.login
+                }
                 setOnClickListener {
                     //todo
                 }
@@ -50,7 +52,7 @@ class MainAdapter(
         this.mainActivity = mainActivity
     }
 
-    fun setItems(data : MutableList<SearchResponseItem>) {
+    fun setItems(data: MutableList<SearchResponseItem>) {
         this.userItems = data
         notifyDataSetChanged()
     }

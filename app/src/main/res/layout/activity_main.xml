@@ -8,30 +8,62 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/svUser"
-        android:background="@drawable/bg_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens16"
         android:layout_marginTop="@dimen/dimens16"
-        android:layout_marginStart="@dimen/dimens16"
         android:layout_marginEnd="@dimen/dimens16"
+        android:background="@drawable/bg_search"
         app:iconifiedByDefault="false"
-        app:queryHint="@string/search_user_here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:queryHint="@string/search_user_here" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvUser"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nedtedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens16"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="@dimen/dimens16"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintEnd_toEndOf="@id/svUser"
-        app:layout_constraintStart_toStartOf="@id/svUser"
-        app:layout_constraintTop_toBottomOf="@id/svUser"
-        tools:listitem="@layout/item_row_user" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svUser">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/shimmerLoading"
+                layout="@layout/base_loading_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/dimens16"
+                android:layout_marginEnd="@dimen/dimens16"
+                android:layout_marginBottom="@dimen/dimens16"
+                android:visibility="gone"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens16"
+                android:layout_marginEnd="@dimen/dimens16"
+                android:layout_marginBottom="@dimen/dimens16"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:listitem="@layout/item_row_user"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

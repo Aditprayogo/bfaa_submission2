@@ -1,12 +1,17 @@
 package com.aditprayogo.bfaa_submission2.ui.main
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.SearchView
 import androidx.activity.viewModels
+import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aditprayogo.bfaa_submission2.R
+import com.aditprayogo.bfaa_submission2.core.state.LoaderState
+import com.aditprayogo.bfaa_submission2.core.util.setGone
+import com.aditprayogo.bfaa_submission2.core.util.setVisible
 import com.aditprayogo.bfaa_submission2.data.responses.SearchResponseItem
 import com.aditprayogo.bfaa_submission2.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +40,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initToolbar() {
-        supportActionBar?.elevation = 0f
+        supportActionBar?.apply {
+            elevation = 0f
+            title = getString(R.string.github_uzerz)
+        }
     }
 
     private fun searchUser() {
@@ -64,7 +72,10 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         binding.rvUser.apply {
             layoutManager =
-                LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
+                LinearLayoutManager(
+                    this@MainActivity, LinearLayoutManager.VERTICAL,
+                    false
+                )
             adapter = mainAdapter
         }
         mainAdapter.setActivity(this)
@@ -73,19 +84,47 @@ class MainActivity : AppCompatActivity() {
     private fun initObservers() {
         with(mainViewModel) {
             state.observe(this@MainActivity, {
-                it?.let {  }
+                it?.let { handleStateLoading(it) }
             })
             resultFromApi.observe(this@MainActivity, {
-                it?.let { handleStateFromInternet(it) }
+                it?.let { handleStateUserResult(it) }
+            })
+            networkError.observe(this@MainActivity, {
+                it?.let { handleStateErrorInternet(it) }
             })
         }
     }
 
-    private fun handleStateLoading() {
+    private fun handleStateLoading(loading: LoaderState) {
+        if (loading == LoaderState.ShowLoading) {
+            binding.apply {
+                shimmerLoading.root.setVisible()
+                rvUser.setGone()
+            }
+        } else {
+            binding.apply {
+                shimmerLoading.root.setGone()
+                rvUser.setVisible()
+            }
 
+        }
     }
 
-    private fun handleStateFromInternet(result : List<SearchResponseItem>) {
+    private fun handleStateErrorInternet(error : Boolean) {
+        if (error) {
+            binding.apply {
+                shimmerLoading.root.setVisible()
+                rvUser.setGone()
+            }
+        } else {
+            binding.apply {
+                shimmerLoading.root.setGone()
+                rvUser.setVisible()
+            }
+        }
+    }
+
+    private fun handleStateUserResult(result: List<SearchResponseItem>) {
         userItems.clear()
         userItems.addAll(result)
         mainAdapter.setItems(userItems)

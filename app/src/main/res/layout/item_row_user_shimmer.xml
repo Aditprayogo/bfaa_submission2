@@ -6,7 +6,6 @@
     android:id="@+id/cardViewUser"
     app:cardCornerRadius="@dimen/dimens8"
     app:cardMaxElevation="10dp"
-    app:cardBackgroundColor="@color/purple_200"
     android:layout_marginBottom="@dimen/dimens16">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/imguser"
+                android:background="@color/shimmer"
                 android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
@@ -45,6 +45,7 @@
             android:textColor="@color/white"
             android:maxLines="1"
             android:ellipsize="end"
+            android:background="@drawable/bg_shimmer_text"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
