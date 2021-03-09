@@ -1,6 +1,9 @@
 package com.aditprayogo.bfaa_submission2.di
 
+import com.aditprayogo.bfaa_submission2.data.network.UserServices
+import com.aditprayogo.bfaa_submission2.data.repository.UserRepositoryImpl
 import com.aditprayogo.bfaa_submission2.domain.UserRepository
+import com.aditprayogo.bfaa_submission2.domain.UserUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,9 +17,17 @@ object AppModule {
     @Provides
     @Singleton
     fun provideUserRepository(
-
+        userServices: UserServices
     ) : UserRepository {
-        //todo
+        return UserRepositoryImpl(userServices)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserUseCase(
+        userRepository: UserRepository
+    ) : UserUseCase {
+        return UserUseCase(userRepository)
     }
 
 }

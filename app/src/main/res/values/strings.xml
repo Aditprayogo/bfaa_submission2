@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">bfaa_submission2</string>
+    <string name="search_user_here">Search User Here</string>
+    <string name="imguser">imgUser</string>
 </resources>
