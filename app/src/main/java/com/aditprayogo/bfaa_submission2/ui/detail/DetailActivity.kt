@@ -9,6 +9,7 @@ import com.aditprayogo.bfaa_submission2.core.util.load
 import com.aditprayogo.bfaa_submission2.core.util.loadCircleCrop
 import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
 import com.aditprayogo.bfaa_submission2.databinding.ActivityDetailBinding
+import com.aditprayogo.bfaa_submission2.ui.viewpager.ViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -33,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         initObservers()
         fetchData()
         initToolbar()
+        initPageAdapter()
     }
 
     private fun handleIntent() {
@@ -69,6 +71,18 @@ class DetailActivity : AppCompatActivity() {
             title = username
             setDisplayHomeAsUpEnabled(true)
         }
+    }
+
+    private fun initPageAdapter() {
+        val sectionPagerAdapter = ViewPagerAdapter(this, supportFragmentManager)
+        binding.apply {
+            viewPager.adapter = sectionPagerAdapter
+            tabs.setupWithViewPager(viewPager)
+        }
+    }
+
+    fun getUsername() : String? {
+        return username
     }
 
     override fun onSupportNavigateUp(): Boolean {

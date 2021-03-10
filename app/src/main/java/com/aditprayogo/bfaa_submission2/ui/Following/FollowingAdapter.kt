@@ -1,31 +1,27 @@
-package com.aditprayogo.bfaa_submission2.ui.main
+package com.aditprayogo.bfaa_submission2.ui.Following
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
-import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.RecyclerView
 import com.aditprayogo.bfaa_submission2.R
 import com.aditprayogo.bfaa_submission2.core.util.load
-import com.aditprayogo.bfaa_submission2.data.responses.SearchResponseItem
+import com.aditprayogo.bfaa_submission2.data.responses.FollowingResponseItem
 import com.aditprayogo.bfaa_submission2.databinding.ItemRowUserBinding
 import com.aditprayogo.bfaa_submission2.ui.detail.DetailActivity
 
-class MainAdapter(
+class FollowingAdapter(
     private val context: Context
-) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<FollowingAdapter.ViewHolder>() {
 
-    private var userItems: MutableList<SearchResponseItem> = mutableListOf()
-    private lateinit var mainActivity: MainActivity
+    private var userFollowingItems: MutableList<FollowingResponseItem> = mutableListOf()
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding: ItemRowUserBinding = ItemRowUserBinding.bind(itemView)
 
-        fun bind(data: SearchResponseItem) {
+        fun bind(data: FollowingResponseItem) {
             with(itemView) {
                 binding.apply {
                     imgUser.load(data.avatarUrl)
@@ -33,7 +29,10 @@ class MainAdapter(
                 }
                 setOnClickListener {
                     context.startActivity(
-                        Intent(context, DetailActivity::class.java).apply {
+                        Intent(
+                            context,
+                            DetailActivity::class.java
+                        ).apply {
                             putExtra(DetailActivity.USERNAME_KEY, data.login)
                         }
                     )
@@ -42,24 +41,20 @@ class MainAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowingAdapter.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context).inflate(R.layout.item_row_user, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: MainAdapter.ViewHolder, position: Int) {
-        holder.bind(userItems[position])
+    override fun onBindViewHolder(holder: FollowingAdapter.ViewHolder, position: Int) {
+        holder.bind(userFollowingItems[position])
     }
 
-    override fun getItemCount(): Int = userItems.size
+    override fun getItemCount(): Int = userFollowingItems.size
 
-    fun setActivity(mainActivity: MainActivity) {
-        this.mainActivity = mainActivity
-    }
-
-    fun setItems(data: MutableList<SearchResponseItem>) {
-        this.userItems = data
+    fun setItems(data: MutableList<FollowingResponseItem>) {
+        this.userFollowingItems = data
         notifyDataSetChanged()
     }
 }
