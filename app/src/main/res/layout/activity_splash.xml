@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.splash.SplashActivity"
+    android:gravity="center"
+    android:background="@color/bluePrimary"
+    android:orientation="vertical">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="@dimen/dimens16"
+        android:layout_marginEnd="@dimen/dimens16"
+        app:lottie_fileName="lottie/github.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/dimens16"
+        android:layout_marginEnd="@dimen/dimens16"
+        app:lottie_fileName="lottie/loading.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+
+    <TextView
+        android:id="@+id/txtAditiya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/created_by"
+        android:textSize="@dimen/dimens18Text"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/dimens8"
+        android:layout_marginStart="@dimen/dimens8"
+        android:layout_marginEnd="@dimen/dimens8"
+        android:ellipsize="end"
+        android:maxLines="1"
+        />
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_user_here">Cari Orang Disini</string>
+    <string name="github_uzerz">Github Uzerz</string>
+    <string name="no_data_available">Tidak ada data</string>
+    <string name="bio">Bio</string>
+    <string name="follower">Pengikut</string>
+    <string name="repository">Gudang</string>
+    <string name="following">Diikuti</string>
+    <string name="no_bio">Tidak ada Bio</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="created_by">Dibuat oleh : Aditiya Prayogo</string>
+    <string name="change_language_settings">Pengaturan Ganti Bahasa</string>
+
+</resources>

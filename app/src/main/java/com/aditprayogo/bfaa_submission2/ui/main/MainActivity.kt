@@ -1,6 +1,10 @@
 package com.aditprayogo.bfaa_submission2.ui.main
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View.*
 import android.widget.SearchView
 import androidx.activity.viewModels
@@ -35,6 +39,16 @@ class MainActivity : AppCompatActivity() {
         searchUser()
         initObservers()
         initRecyclerView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.change_language) startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+        return super.onOptionsItemSelected(item)
     }
 
     private fun initToolbar() {

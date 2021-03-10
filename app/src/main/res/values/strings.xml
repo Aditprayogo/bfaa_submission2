@@ -1,17 +1,18 @@
 <resources>
-    <string name="app_name">bfaa_submission2</string>
+    <string name="app_name" translatable="false">bfaa_submission2</string>
     <string name="search_user_here">Search User Here</string>
-    <string name="imguser">imgUser</string>
+    <string name="imguser" translatable="false">imgUser</string>
     <string name="github_uzerz">Github Uzerz</string>
     <string name="no_data_available">No Data Available</string>
-    <string name="imageUser">imageUser</string>
+    <string name="imageUser" translatable="false">imageUser</string>
     <string name="username">Username</string>
     <string name="bio">Bio</string>
     <string name="follower">Follower</string>
-    <string name="dummyData">9999</string>
+    <string name="dummyData" translatable="false">9999</string>
     <string name="repository">Repository</string>
     <string name="following">Following</string>
     <string name="no_bio">No Bio</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="created_by">Created by : Aditiya Prayogo</string>
+    <string name="change_language_settings">Change Language Settings</string>
 </resources>
