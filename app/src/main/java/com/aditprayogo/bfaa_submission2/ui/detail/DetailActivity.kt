@@ -1,11 +1,9 @@
 package com.aditprayogo.bfaa_submission2.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import com.aditprayogo.bfaa_submission2.R
-import com.aditprayogo.bfaa_submission2.core.util.load
 import com.aditprayogo.bfaa_submission2.core.util.loadCircleCrop
 import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
 import com.aditprayogo.bfaa_submission2.databinding.ActivityDetailBinding

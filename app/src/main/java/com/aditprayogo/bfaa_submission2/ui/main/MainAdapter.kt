@@ -2,12 +2,9 @@ package com.aditprayogo.bfaa_submission2.ui.main
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
-import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.RecyclerView
 import com.aditprayogo.bfaa_submission2.R
 import com.aditprayogo.bfaa_submission2.core.util.load

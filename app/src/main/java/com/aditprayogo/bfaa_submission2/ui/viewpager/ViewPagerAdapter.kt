@@ -15,7 +15,7 @@ class ViewPagerAdapter(
 
     private val TAB_TITLES = intArrayOf(R.string.follower, R.string.following)
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return context.resources.getString(TAB_TITLES[position])
     }
     override fun getCount(): Int = 2

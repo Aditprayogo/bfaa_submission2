@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.loader.content.Loader
 import com.aditprayogo.bfaa_submission2.core.state.LoaderState
 import com.aditprayogo.bfaa_submission2.core.state.ResultState
 import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
@@ -27,8 +26,6 @@ class DetailViewModel @ViewModelInject constructor(
      * Error
      */
     private val _error = MutableLiveData<String>()
-    val error: LiveData<String>
-        get() = _error
 
     /**
      * Network Error

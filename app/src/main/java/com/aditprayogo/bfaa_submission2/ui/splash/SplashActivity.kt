@@ -1,11 +1,9 @@
 package com.aditprayogo.bfaa_submission2.ui.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.aditprayogo.bfaa_submission2.R
-import com.aditprayogo.bfaa_submission2.databinding.ActivityDetailBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.aditprayogo.bfaa_submission2.databinding.ActivitySplashBinding
 import com.aditprayogo.bfaa_submission2.ui.main.MainActivity
 

@@ -1,20 +1,17 @@
 package com.aditprayogo.bfaa_submission2.ui.Follower
 
-import android.content.Loader
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aditprayogo.bfaa_submission2.R
 import com.aditprayogo.bfaa_submission2.core.state.LoaderState
 import com.aditprayogo.bfaa_submission2.core.util.setGone
 import com.aditprayogo.bfaa_submission2.core.util.setVisible
-import com.aditprayogo.bfaa_submission2.data.responses.FollowerResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowerResponseItem
 import com.aditprayogo.bfaa_submission2.databinding.FragmentFollowerBinding
 import com.aditprayogo.bfaa_submission2.ui.detail.DetailActivity
@@ -37,7 +34,7 @@ class FollowerFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         return binding.root
     }
