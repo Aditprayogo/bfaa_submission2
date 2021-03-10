@@ -1,12 +1,10 @@
 package com.aditprayogo.bfaa_submission2.ui.main
 
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.View.*
 import android.widget.SearchView
 import androidx.activity.viewModels
-import androidx.loader.content.Loader
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aditprayogo.bfaa_submission2.R
 import com.aditprayogo.bfaa_submission2.core.state.LoaderState
@@ -56,8 +54,10 @@ class MainActivity : AppCompatActivity() {
                             userItems.clear()
                             mainViewModel.getUsersFromApi(query)
                             svUser.clearFocus()
+                            setIllustration(false)
                         } else {
                             svUser.clearFocus()
+                            setIllustration(true)
                         }
                     }
                     return true
@@ -100,13 +100,14 @@ class MainActivity : AppCompatActivity() {
             binding.apply {
                 shimmerLoading.root.setVisible()
                 rvUser.setGone()
+                setIllustration(false)
             }
         } else {
             binding.apply {
                 shimmerLoading.root.setGone()
+                setIllustration(false)
                 rvUser.setVisible()
             }
-
         }
     }
 
@@ -114,11 +115,13 @@ class MainActivity : AppCompatActivity() {
         if (error) {
             binding.apply {
                 shimmerLoading.root.setVisible()
+                setIllustration(false)
                 rvUser.setGone()
             }
         } else {
             binding.apply {
                 shimmerLoading.root.setGone()
+                setIllustration(false)
                 rvUser.setVisible()
             }
         }
@@ -128,5 +131,9 @@ class MainActivity : AppCompatActivity() {
         userItems.clear()
         userItems.addAll(result)
         mainAdapter.setItems(userItems)
+    }
+
+    private fun setIllustration(status : Boolean) {
+        binding.lottieView.root.visibility = if (status) VISIBLE else INVISIBLE
     }
 }

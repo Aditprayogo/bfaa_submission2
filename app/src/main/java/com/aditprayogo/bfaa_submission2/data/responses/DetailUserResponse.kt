@@ -7,7 +7,7 @@ data class DetailUserResponse(
     @SerializedName("avatar_url")
     val avatarUrl: String?,
     @SerializedName("bio")
-    val bio: Any?,
+    val bio: String?,
     @SerializedName("blog")
     val blog: String?,
     @SerializedName("company")

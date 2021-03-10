@@ -6,10 +6,10 @@
     android:id="@+id/cardViewUser"
     app:cardCornerRadius="@dimen/dimens8"
     app:cardMaxElevation="10dp"
-    app:cardBackgroundColor="@color/purple_200"
     android:layout_marginBottom="@dimen/dimens16">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_row_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp">

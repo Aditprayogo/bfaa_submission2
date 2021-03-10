@@ -3,4 +3,13 @@
     <string name="search_user_here">Search User Here</string>
     <string name="imguser">imgUser</string>
     <string name="github_uzerz">Github Uzerz</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="imageUser">imageUser</string>
+    <string name="username">Username</string>
+    <string name="bio">Bio</string>
+    <string name="follower">Follower</string>
+    <string name="dummyData">9999</string>
+    <string name="repository">Repository</string>
+    <string name="following">Following</string>
+    <string name="no_bio">No Bio</string>
 </resources>

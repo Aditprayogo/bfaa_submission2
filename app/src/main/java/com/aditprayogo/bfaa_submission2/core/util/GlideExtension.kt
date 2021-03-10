@@ -14,6 +14,16 @@ fun ImageView.load(imgResource : Any?) {
         .into(this)
 }
 
+fun ImageView.loadCircleCrop(imageResource : Any?) {
+    Glide.with(context.applicationContext)
+        .load(imageResource)
+        .circleCrop()
+        .transition(DrawableTransitionOptions.withCrossFade(getDrawableFactory()))
+        .placeholder(R.drawable.ic_user)
+        .into(this)
+
+}
+
 private fun getDrawableFactory() : DrawableCrossFadeFactory {
     return DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
 }

@@ -95,4 +95,7 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     implementation 'androidx.palette:palette-ktx:1.0.0'
+
+    //lottie annimation
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

@@ -1,6 +1,7 @@
 package com.aditprayogo.bfaa_submission2.ui.main
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.aditprayogo.bfaa_submission2.R
 import com.aditprayogo.bfaa_submission2.core.util.load
 import com.aditprayogo.bfaa_submission2.data.responses.SearchResponseItem
 import com.aditprayogo.bfaa_submission2.databinding.ItemRowUserBinding
+import com.aditprayogo.bfaa_submission2.ui.detail.DetailActivity
 
 class MainAdapter(
     private val context: Context
@@ -30,7 +32,11 @@ class MainAdapter(
                     txtUsername.text = data.login
                 }
                 setOnClickListener {
-                    //todo
+                    context.startActivity(
+                        Intent(context, DetailActivity::class.java).apply {
+                            putExtra(DetailActivity.USERNAME_KEY, data.login)
+                        }
+                    )
                 }
             }
         }
