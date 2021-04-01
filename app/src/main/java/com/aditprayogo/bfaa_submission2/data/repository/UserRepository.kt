@@ -1,4 +1,4 @@
-package com.aditprayogo.bfaa_submission2.domain
+package com.aditprayogo.bfaa_submission2.data.repository
 
 import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowerResponse

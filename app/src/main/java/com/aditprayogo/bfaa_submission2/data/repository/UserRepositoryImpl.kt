@@ -5,7 +5,6 @@ import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowerResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowingResponse
 import com.aditprayogo.bfaa_submission2.data.responses.SearchResponse
-import com.aditprayogo.bfaa_submission2.domain.UserRepository
 import retrofit2.Response
 import javax.inject.Inject
 

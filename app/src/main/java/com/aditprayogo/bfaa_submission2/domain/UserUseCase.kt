@@ -2,6 +2,7 @@ package com.aditprayogo.bfaa_submission2.domain
 
 import com.aditprayogo.bfaa_submission2.core.state.ResultState
 import com.aditprayogo.bfaa_submission2.core.util.safeApiCall
+import com.aditprayogo.bfaa_submission2.data.repository.UserRepository
 import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowerResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowingResponse

@@ -1,5 +1,6 @@
 package com.aditprayogo.bfaa_submission2.data.network
 
+import com.aditprayogo.bfaa_submission2.BuildConfig
 import com.aditprayogo.bfaa_submission2.data.responses.DetailUserResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowerResponse
 import com.aditprayogo.bfaa_submission2.data.responses.FollowingResponse
@@ -24,7 +25,7 @@ interface UserServices {
      * Endpoint detail user
      */
     @GET("users/{username}")
-    @Headers("Authorization: token cdad1610fc462061169b4153123e0efde13c37da")
+    @Headers("Authorization: token ${BuildConfig.GITHUB_KEY}")
     suspend fun getDetailUser(
         @Path("username") username : String
     ) : Response<DetailUserResponse>

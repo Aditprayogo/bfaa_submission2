@@ -19,7 +19,6 @@ class DetailActivity : AppCompatActivity() {
 
     private val detailViewModel : DetailViewModel by viewModels()
     private var username : String? = null
-    private var userDetail : DetailUserResponse? = null
 
     private val binding : ActivityDetailBinding by lazy {
         ActivityDetailBinding.inflate(layoutInflater)
@@ -46,7 +45,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun handleStateFromInternet(data : DetailUserResponse) {
-        userDetail = data
         binding.apply {
             ivUser.loadCircleCrop(data.avatarUrl)
             txtUsername.text = data.login

@@ -2,7 +2,7 @@ package com.aditprayogo.bfaa_submission2.di
 
 import com.aditprayogo.bfaa_submission2.data.network.UserServices
 import com.aditprayogo.bfaa_submission2.data.repository.UserRepositoryImpl
-import com.aditprayogo.bfaa_submission2.domain.UserRepository
+import com.aditprayogo.bfaa_submission2.data.repository.UserRepository
 import com.aditprayogo.bfaa_submission2.domain.UserUseCase
 import dagger.Module
 import dagger.Provides
